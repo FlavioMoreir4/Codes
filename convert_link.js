@@ -11,7 +11,7 @@ $('.MyDiv').html(function(i, html) {
 		'<p><object data="//player.vimeo.com/video/$1"></object></p>'
 	);
 });
-Link de Imagens
+//Link de Imagens
 $(".MyDiv").each(function() {
     if(!$(this).find('img').length){
 		$(this).html($(this).html().
