@@ -1,0 +1,28 @@
+<link href="../css/jquery.cssemoticons.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="../js/jquery-1.4.2.min.js" type="text/javascript"></script>
+<script src="../js/jquery.cssemoticons.js" type="text/javascript"></script>
+<script type="text/javascript">
+	
+	$('.msg-msg').emoticonize({
+		//delay: 800,
+		animate: false,
+		//exclude: 'pre, code, .no-emoticons'	
+	});
+	
+	$('.msg-msg lnk').html(function(i, html) {
+		return html.
+			replace(/&/g,
+			'?'
+		).
+			replace(/(?:https:\/\/)?(?:http:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.be)\/(?:watch\?v=)?([^\ ]+)/g,
+			'<p><object data="http://www.youtube.com/embed/$1"></object></p>'
+		).
+			replace(/(?:http:\/\/)?(?:www\.)?(?:vimeo\.com)\/([^\ ]+)/g,
+			'<p><object data="//player.vimeo.com/video/$1"></object></p>'
+		).
+			replace(/((\S+)(\.png|\.jpg|\.gif|\.webp))/g,
+			'<p><img src="$1" style="max-width: 100%;" /></p>'
+		);
+	});
+
+</script>
